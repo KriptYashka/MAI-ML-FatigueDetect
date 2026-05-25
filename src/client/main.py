@@ -31,18 +31,13 @@ async def home():
             body { 
                 font-family: 'Segoe UI', Arial, sans-serif; 
                 background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
-                min-height: 100vh; padding: 20px;
-                color: #333;
+                min-height: 100vh; padding: 20px; color: #333;
             }
             .container { max-width: 1000px; margin: 0 auto; }
-            .header {
-                text-align: center; margin-bottom: 30px; color: white;
-            }
+            .header { text-align: center; margin-bottom: 30px; color: white; }
             .header h1 { font-size: 2.2em; margin-bottom: 10px; }
             .header p { font-size: 1.1em; opacity: 0.9; }
-            .logo {
-                font-size: 3em; margin-bottom: 15px;
-            }
+            .logo { font-size: 3em; margin-bottom: 15px; }
             .card {
                 background: white; border-radius: 20px; padding: 30px;
                 margin-bottom: 25px; box-shadow: 0 15px 50px rgba(0,0,0,0.3);
@@ -52,18 +47,10 @@ async def home():
                 padding-bottom: 15px; border-bottom: 3px solid #4299e1;
                 font-size: 1.5em;
             }
-            .card h3 {
-                color: #2d3748; margin: 20px 0 10px;
-                font-size: 1.2em;
-            }
+            .card h3 { color: #2d3748; margin: 20px 0 10px; font-size: 1.2em; }
             .form-group { margin-bottom: 18px; }
-            label { 
-                display: block; margin-bottom: 6px; color: #4a5568; 
-                font-weight: 600; font-size: 0.95em;
-            }
-            .hint {
-                font-size: 0.85em; color: #718096; margin-top: 3px;
-            }
+            label { display: block; margin-bottom: 6px; color: #4a5568; font-weight: 600; font-size: 0.95em; }
+            .hint { font-size: 0.85em; color: #718096; margin-top: 3px; }
             input[type="number"], input[type="file"] {
                 width: 100%; padding: 14px; border: 2px solid #e2e8f0;
                 border-radius: 10px; font-size: 16px; transition: all 0.3s;
@@ -77,14 +64,12 @@ async def home():
                 background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
                 color: white; border: none; padding: 16px 30px;
                 border-radius: 10px; font-size: 18px; cursor: pointer;
-                width: 100%; transition: all 0.3s;
-                font-weight: 600;
+                width: 100%; transition: all 0.3s; font-weight: 600;
             }
-            .btn:hover { 
-                transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(66,153,225,0.4);
-            }
+            .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(66,153,225,0.4); }
             .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+            .btn-success { background: linear-gradient(135deg, #276749 0%, #48bb78 100%); }
+            .btn-danger { background: linear-gradient(135deg, #c53030 0%, #e53e3e 100%); }
             .result {
                 margin-top: 25px; padding: 25px; border-radius: 15px;
                 display: none; animation: fadeIn 0.5s;
@@ -118,22 +103,15 @@ async def home():
                 margin: 15px 0; border-left: 5px solid #4299e1;
                 box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             }
-            .recommendation h4 {
-                color: #2d3748; margin-bottom: 10px; font-size: 1.1em;
-                display: flex; align-items: center; gap: 8px;
-            }
+            .recommendation h4 { color: #2d3748; margin-bottom: 10px; font-size: 1.1em; display: flex; align-items: center; gap: 8px; }
             .recommendation p { color: #4a5568; line-height: 1.6; }
             .rest-time {
                 background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
                 border-radius: 10px; padding: 15px; margin: 15px 0;
                 text-align: center;
             }
-            .rest-time .time {
-                font-size: 2.5em; font-weight: bold; color: #2b6cb0;
-            }
-            .rest-time .label {
-                color: #4a5568; font-size: 0.95em;
-            }
+            .rest-time .time { font-size: 2.5em; font-weight: bold; color: #2b6cb0; }
+            .rest-time .label { color: #4a5568; font-size: 0.95em; }
             .status-bar {
                 background: rgba(0,0,0,0.8); color: white; padding: 12px 20px;
                 text-align: center; position: fixed; bottom: 0; left: 0; right: 0;
@@ -142,33 +120,74 @@ async def home():
             .status-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
             .status-connected { background: #48bb78; }
             .status-disconnected { background: #f56565; }
-            .prob-bar {
-                background: #e2e8f0; border-radius: 5px; height: 20px;
-                margin: 5px 0; overflow: hidden;
-            }
-            .prob-fill {
-                height: 100%; border-radius: 5px; transition: width 0.5s;
-            }
+            .prob-bar { background: #e2e8f0; border-radius: 5px; height: 20px; margin: 5px 0; overflow: hidden; }
+            .prob-fill { height: 100%; border-radius: 5px; transition: width 0.5s; }
             .prob-high { background: linear-gradient(90deg, #fc8181, #f56565); }
             .prob-moderate { background: linear-gradient(90deg, #fbd38d, #ed8936); }
             .prob-low { background: linear-gradient(90deg, #9ae6b4, #48bb78); }
-            .info-box {
-                background: #ebf8ff; border-radius: 10px; padding: 15px;
-                margin: 15px 0; border-left: 4px solid #4299e1;
-            }
+            .info-box { background: #ebf8ff; border-radius: 10px; padding: 15px; margin: 15px 0; border-left: 4px solid #4299e1; }
             .info-box p { color: #2b6cb0; font-size: 0.9em; }
-            .flight-info {
-                display: flex; gap: 20px; margin-bottom: 20px;
+            .step-indicator { display: flex; margin-bottom: 20px; gap: 10px; }
+            .step {
+                flex: 1; padding: 12px; border-radius: 10px; text-align: center;
+                font-weight: 600; transition: all 0.3s;
             }
-            .flight-stat {
-                flex: 1; background: #f7fafc; padding: 15px;
-                border-radius: 10px; text-align: center;
+            .step-active { background: #4299e1; color: white; }
+            .step-done { background: #48bb78; color: white; }
+            .step-pending { background: #e2e8f0; color: #a0aec0; }
+            .game-area {
+                background: #1a202c; border-radius: 15px; padding: 30px;
+                text-align: center; min-height: 250px; position: relative;
+                overflow: hidden;
             }
-            .flight-stat .value { font-size: 1.8em; font-weight: bold; color: #2b6cb0; }
-            .flight-stat .label { font-size: 0.85em; color: #718096; }
-            @media (max-width: 768px) {
-                .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .game-target {
+                width: 80px; height: 80px; border-radius: 50%;
+                display: inline-flex; align-items: center; justify-content: center;
+                cursor: pointer; font-size: 24px; font-weight: bold;
+                transition: all 0.1s; position: absolute;
+                user-select: none; box-shadow: 0 0 20px rgba(255,255,255,0.3);
             }
+            .game-target:active { transform: scale(0.9); }
+            .game-target.green { background: radial-gradient(circle at 30% 30%, #48bb78, #276749); }
+            .game-target.red { background: radial-gradient(circle at 30% 30%, #fc8181, #c53030); }
+            .game-target.yellow { background: radial-gradient(circle at 30% 30%, #fbd38d, #b7791f); }
+            .game-target.blue { background: radial-gradient(circle at 30% 30%, #63b3ed, #2b6cb0); }
+            .game-timer-bar {
+                height: 8px; background: #e2e8f0; border-radius: 4px;
+                margin-bottom: 15px; overflow: hidden;
+            }
+            .game-timer-fill {
+                height: 100%; background: linear-gradient(90deg, #48bb78, #f6ad55, #fc8181);
+                border-radius: 4px; transition: width 0.1s linear;
+            }
+            .game-scoreboard {
+                display: flex; gap: 15px; margin-bottom: 20px;
+                justify-content: center; flex-wrap: wrap;
+            }
+            .game-stat {
+                background: #2d3748; color: white; padding: 10px 20px;
+                border-radius: 10px; text-align: center; min-width: 100px;
+            }
+            .game-stat .value { font-size: 1.5em; font-weight: bold; }
+            .game-stat .label { font-size: 0.75em; opacity: 0.8; }
+            .game-instruction {
+                background: #2d3748; color: #e2e8f0; padding: 15px;
+                border-radius: 10px; margin-bottom: 20px; font-size: 1em;
+                line-height: 1.6;
+            }
+            .phase-separator { text-align: center; margin: 30px 0; position: relative; }
+            .phase-separator::before {
+                content: ''; position: absolute; left: 0; right: 0; top: 50%;
+                height: 2px; background: #e2e8f0;
+            }
+            .phase-label {
+                background: white; padding: 10px 20px;
+                border-radius: 20px; position: relative; z-index: 1;
+                color: #718096; font-size: 0.9em;
+            }
+            .manual-section { display: none; }
+            .manual-section.active { display: block; animation: fadeIn 0.5s; }
+            @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
         </style>
     </head>
     <body>
@@ -176,14 +195,12 @@ async def home():
             <div class="header">
                 <div class="logo">&#x2708;&#xFE0F;</div>
                 <h1>Определение Усталости Пилотов</h1>
-                <p>Система мониторинга усталости для обеспечения безопасности полётов</p>
+                <p>Двухэтапная диагностика: игра на внимательность + опрос</p>
             </div>
             
             <div class="card">
-                <h2>&#x1F4CB; Анализ изображений (Усталость по лицу)</h2>
-                <div class="info-box">
-                    <p>Загрузите фотографию лица для анализа признаков усталости: положение глаз, мимика, цвет кожи.</p>
-                </div>
+                <h2>&#x1F4F7; Анализ изображений</h2>
+                <div class="info-box"><p>Загрузите фотографию лица для визуальной диагностики усталости.</p></div>
                 <div id="image-preview-container" style="display: none; text-align: center;">
                     <img id="image-preview" class="preview-image" />
                 </div>
@@ -196,74 +213,97 @@ async def home():
             </div>
 
             <div class="card">
-                <h2>&#x1F4CA; Ввод данных (Усталость принятия решений)</h2>
-                <div class="info-box">
-                    <p>Введите параметры для оценки когнитивной усталости пилота.</p>
-                </div>
+                <h2>&#x1F3AE; Диагностика когнитивной усталости</h2>
                 
-                <div class="flight-info">
-                    <div class="flight-stat">
-                        <div class="value" id="flight-hours">0</div>
-                        <div class="label">Часов полёта</div>
-                    </div>
-                    <div class="flight-stat">
-                        <div class="value" id="sleep-deficit">0</div>
-                        <div class="label">Дефицит сна (часы)</div>
-                    </div>
+                <div class="step-indicator">
+                    <div id="step1" class="step step-active">&#x1F3AE; Этап 1: Игра 30 сек</div>
+                    <div id="step2" class="step step-pending">&#x1F4CB; Этап 2: Дополнительные данные</div>
+                    <div id="step3" class="step step-pending">&#x1F9E0; Результат</div>
                 </div>
 
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label>Часов бодрствования</label>
-                        <input type="number" id="hours_awake" min="0" max="48" step="0.5" value="8" onchange="updateStats()">
-                        <div class="hint">Время с последнего сна</div>
+                <div id="game-section">
+                    <div class="game-instruction">
+                        <strong>&#x1F6A8; Тест на внимательность (авиационный симулятор):</strong><br>
+                        На экране будет появляться &#x1F534; красный индикатор — нажимайте <strong>ПРОБЕЛ</strong> как можно быстрее.<br>
+                        &#x1F7E2; Зелёный — <strong>НЕ НАЖИМАЙТЕ</strong> (сдерживание реакции).<br>
+                        &#x23F1;&#xFE0F; Тест длится 30 секунд. Чем быстрее и точнее — тем ниже усталость.
                     </div>
-                    <div class="form-group">
-                        <label>Часов сна прошлой ночью</label>
-                        <input type="number" id="sleep_hours" min="0" max="24" step="0.5" value="7" onchange="updateStats()">
-                        <div class="hint">Рекомендуется 7-9 часов</div>
+
+                    <div class="game-timer-bar">
+                        <div id="game-timer-fill" class="game-timer-fill" style="width: 100%;"></div>
                     </div>
-                    <div class="form-group">
-                        <label>Принято решений</label>
-                        <input type="number" id="decisions_made" min="0" value="20" onchange="updateStats()">
-                        <div class="hint">Количество решений за смену</div>
+
+                    <div class="game-scoreboard">
+                        <div class="game-stat">
+                            <div class="value" id="game-time">30</div>
+                            <div class="label">&#x23F1;&#xFE0F; Секунд</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="value" id="game-reactions">0</div>
+                            <div class="label">&#x1F4A8; Реакций</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="value" id="game-correct">0</div>
+                            <div class="label">&#x2705; Верных</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="value" id="game-wrong">0</div>
+                            <div class="label">&#x274C; Ошибок</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="value" id="game-avg-ms">0</div>
+                            <div class="label">&#x23F0; Среднее (мс)</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Переключений задач</label>
-                        <input type="number" id="task_switches" min="0" value="5" onchange="updateStats()">
-                        <div class="hint">Смена между задачами</div>
+
+                    <div class="game-area" id="game-area">
+                        <div id="game-message" style="color: #a0aec0; font-size: 1.2em;">
+                            Нажмите <strong>"Начать тест"</strong> для запуска
+                        </div>
+                        <div id="game-target" class="game-target" style="display: none;"></div>
                     </div>
-                    <div class="form-group">
-                        <label>Среднее время решения (сек)</label>
-                        <input type="number" id="avg_decision_time" min="0" step="0.1" value="2.5" onchange="updateStats()">
-                        <div class="hint">Время на принятие решения</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Потребление кофеина (чашки)</label>
-                        <input type="number" id="caffeine_cups" min="0" value="2" onchange="updateStats()">
-                        <div class="hint">Кофе, чай, энергетики</div>
-                    </div>
+
+                    <button id="game-start-btn" class="btn btn-success" onclick="startGame()" style="margin-top: 15px;">
+                        &#x25B6;&#xFE0F; Начать тест на внимательность
+                    </button>
+                    <button id="game-next-btn" class="btn" onclick="goToManual()" style="margin-top: 15px; display: none;">
+                        &#x1F4CB; Перейти к вводу дополнительных данных
+                    </button>
                 </div>
 
-                <div class="grid-3">
-                    <div class="form-group">
-                        <label>Уровень стресса (1-10)</label>
-                        <input type="number" id="stress_level" min="1" max="10" value="5" onchange="updateStats()">
+                <div id="manual-section" class="manual-section">
+                    <div class="info-box" style="margin-bottom: 20px;">
+                        <p>&#x2705; Игра завершена. Заполните оставшиеся параметры для полного анализа.</p>
                     </div>
-                    <div class="form-group">
-                        <label>Частота ошибок (0-1)</label>
-                        <input type="number" id="error_rate" min="0" max="1" step="0.01" value="0.05" onchange="updateStats()">
+                    
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>&#x23F0; Часов бодрствования</label>
+                            <input type="number" id="hours_awake" min="0" max="48" step="0.5" value="8">
+                            <div class="hint">Сколько часов вы уже не спите</div>
+                        </div>
+                        <div class="form-group">
+                            <label>&#x1F634; Часов сна прошлой ночью</label>
+                            <input type="number" id="sleep_hours" min="0" max="24" step="0.5" value="7">
+                            <div class="hint">Сколько часов вы спали</div>
+                        </div>
+                        <div class="form-group">
+                            <label>&#x2615; Потребление кофеина (чашки)</label>
+                            <input type="number" id="caffeine_cups" min="0" value="2">
+                            <div class="hint">Кофе, чай, энергетики за сегодня</div>
+                        </div>
+                        <div class="form-group">
+                            <label>&#x1F4A8; Уровень стресса (1-10)</label>
+                            <input type="number" id="stress_level" min="1" max="10" value="5">
+                            <div class="hint">Субъективная оценка стресса</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Когнитивная нагрузка (0-1)</label>
-                        <input type="number" id="cognitive_load" min="0" max="1" step="0.01" value="0.5" onchange="updateStats()">
-                    </div>
+
+                    <button class="btn" onclick="submitCombined()">
+                        &#x1F9E0; Провести полный анализ
+                    </button>
                 </div>
 
-                <button class="btn" onclick="submitTabular()">
-                    &#x1F50D; Провести анализ усталости
-                </button>
-                
                 <div id="tabular-spinner" class="spinner" style="display: none;"></div>
                 <div id="tabular-result" class="result"></div>
             </div>
@@ -272,10 +312,10 @@ async def home():
                 <h2 style="color: white; border-bottom-color: #63b3ed;">&#x2139;&#xFE0F; О системе</h2>
                 <p style="margin: 15px 0; line-height: 1.8;">
                     Система определения усталости пилотов разработана для обеспечения безопасности авиаперевозок.
-                    Мониторинг усталости - критически важный элемент управления безопасностью полётов (SMS).
+                    Двухэтапная диагностика включает объективный тест на внимательность и сбор дополнительных данных.
                 </p>
                 <p style="opacity: 0.8; font-size: 0.9em;">
-                    Система не является заменой медицинского осмотра. При сомнениях обратитесь к руководству и медицинскому персоналу.
+                    Система не является заменой медицинского осмотра. При сомнениях обратитесь к руководству.
                 </p>
             </div>
         </div>
@@ -290,157 +330,258 @@ async def home():
             
             const RECOMMENDATIONS = {
                 'High': {
-                    icon: '&#x26A0;&#xFE0F;',
-                    title: 'КРИТИЧЕСКИЙ УРОВЕНЬ УСТАЛОСТИ',
-                    color: 'danger',
-                    restTime: '12-14 часов',
+                    icon: '&#x26A0;&#xFE0F;', title: 'КРИТИЧЕСКИЙ УРОВЕНЬ УСТАЛОСТИ',
+                    color: 'danger', restTime: '12-14 часов',
                     actions: [
                         '&#x274C; НЕМЕДЛЕННО прекратите выполнение полётных обязанностей',
                         '&#x1F6AB; Не допускайте к выполнению рейса',
-                        '&#x1F4DE; Сообщите руководству о невозможности выполнения полёта',
-                        '&#x1F4F1; Обратитесь за медицинской помощью при необходимости',
-                        '&#x1F6CF; Обеспечьте полноценный отдых перед следующей сменой'
+                        '&#x1F4DE; Сообщите руководству',
+                        '&#x1F6CF; Обеспечьте 12+ часов отдыха'
                     ],
-                    description: 'Пилот находится в состоянии сильной усталости. Риск ошибок критически высок.'
+                    description: 'Пилот в состоянии сильной усталости. Риск ошибок критически высок.'
                 },
                 'Moderate': {
-                    icon: '&#x26A0;&#xFE0F;',
-                    title: 'ПОВЫШЕННЫЙ УРОВЕНЬ УСТАЛОСТИ',
-                    color: 'warning',
-                    restTime: '8-10 часов',
+                    icon: '&#x26A0;&#xFE0F;', title: 'ПОВЫШЕННЫЙ УРОВЕНЬ УСТАЛОСТИ',
+                    color: 'warning', restTime: '8-10 часов',
                     actions: [
-                        '&#x26A0; Рекомендуется отмена или перенос некритичных рейсов',
-                        '&#x1F4AC; Проведите дополнительный брифинг с вторым пилотом',
+                        '&#x26A0; Рекомендуется перенос некритичных рейсов',
+                        '&#x1F4AC; Усиленный брифинг с экипажем',
                         '&#x23F0; Увеличьте частоту перерывов',
-                        '&#x1F4A4; Избегайте сложных метеоусловий',
-                        '&#x1F4A1; Используйте дополнительное освещение в кабине'
+                        '&#x1F4A4; Избегайте сложных метеоусловий'
                     ],
-                    description: 'Усталость влияет на принятие решений. Требуется повышенное внимание.'
+                    description: 'Усталость влияет на внимание. Требуется повышенный контроль.'
                 },
                 'Low': {
-                    icon: '&#x2705;',
-                    title: 'УРОВЕНЬ УСТАЛОСТИ В НОРМЕ',
-                    color: 'success',
-                    restTime: 'Обычный отдых',
+                    icon: '&#x2705;', title: 'УРОВЕНЬ УСТАЛОСТИ В НОРМЕ',
+                    color: 'success', restTime: 'Обычный отдых',
                     actions: [
                         '&#x2705; Можно выполнять полётные обязанности',
                         '&#x1F4CB; Следуйте стандартным процедурам',
-                        '&#x23F0; Поддерживайте регулярные перерывы',
-                        '&#x1F4DD; Ведите записи о своём состоянии'
+                        '&#x23F0; Поддерживайте регулярные перерывы'
                     ],
-                    description: 'Усталость в допустимых пределах. Продолжайте стандартный мониторинг.'
+                    description: 'Усталость в допустимых пределах.'
                 }
             };
-            
-            const FLIGHT_HOURS_LIMIT = 900;
-            const DAILY_LIMIT = 8;
-            const WEEKLY_LIMIT = 60;
 
-            function updateStats() {
-                const hoursAwake = parseFloat(document.getElementById('hours_awake').value) || 0;
-                const sleepHours = parseFloat(document.getElementById('sleep_hours').value) || 0;
-                const decisions = parseFloat(document.getElementById('decisions_made').value) || 0;
+            let gameData = {
+                running: false,
+                reactions: 0,
+                correct: 0,
+                wrong: 0,
+                totalTime: 0,
+                startTime: 0,
+                timeLeft: 30,
+                currentStimulus: null,
+                stimulusTime: 0,
+                reactionTimes: [],
+                stimulusSequence: [],
+                keyPressed: false,
+                stimulusTimeout: null,
+                trialTimeout: null,
+            };
+
+            function startGame() {
+                const btn = document.getElementById('game-start-btn');
+                btn.disabled = true;
+                btn.textContent = '⏳ Идёт тест...';
+
+                gameData.running = true;
+                gameData.reactions = 0;
+                gameData.correct = 0;
+                gameData.wrong = 0;
+                gameData.timeLeft = 30;
+                gameData.reactionTimes = [];
+                gameData.stimulusSequence = [];
+                gameData.startTime = Date.now();
+                gameData.keyPressed = false;
+
+                document.getElementById('game-next-btn').style.display = 'none';
+                document.getElementById('game-message').style.display = 'none';
+                document.getElementById('tabular-result').style.display = 'none';
+                updateScoreboard();
+
+                document.addEventListener('keydown', handleKeyPress);
+                gameLoop();
+            }
+
+            function gameLoop() {
+                if (!gameData.running) return;
                 
-                document.getElementById('flight-hours').textContent = hoursAwake;
-                document.getElementById('sleep-deficit').textContent = Math.max(0, (8 - sleepHours)).toFixed(1);
-            }
-            
-            async function checkConnection() {
-                try {
-                    const response = await fetch(SERVER_URL + '/health');
-                    if (response.ok) {
-                        document.getElementById('status-indicator').className = 'status-indicator status-connected';
-                        document.getElementById('status-text').textContent = 'Подключено к серверу';
-                    } else {
-                        throw new Error('Server error');
-                    }
-                } catch (e) {
-                    document.getElementById('status-indicator').className = 'status-indicator status-disconnected';
-                    document.getElementById('status-text').textContent = 'Отключено - сервер недоступен';
-                }
-            }
-            
-            function previewImage(input) {
-                const container = document.getElementById('image-preview-container');
-                const preview = document.getElementById('image-preview');
-                if (input.files && input.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        preview.src = e.target.result;
-                        container.style.display = 'block';
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            
-            async function uploadImage() {
-                const input = document.getElementById('image-input');
-                const spinner = document.getElementById('image-spinner');
-                const result = document.getElementById('image-result');
+                const elapsed = (Date.now() - gameData.startTime) / 1000;
+                gameData.timeLeft = Math.max(0, 30 - elapsed);
                 
-                if (!input.files[0]) {
-                    alert('Пожалуйста, выберите изображение');
+                updateTimer();
+                updateScoreboard();
+
+                if (gameData.timeLeft <= 0) {
+                    endGame();
                     return;
                 }
+
+                if (!gameData.currentStimulus && !gameData.keyPressed) {
+                    showRandomStimulus();
+                }
+
+                requestAnimationFrame(gameLoop);
+            }
+
+            function showRandomStimulus() {
+                gameData.keyPressed = false;
                 
-                spinner.style.display = 'block';
-                result.style.display = 'none';
+                const target = document.getElementById('game-target');
+                const area = document.getElementById('game-area');
+                const areaRect = area.getBoundingClientRect();
                 
-                const formData = new FormData();
-                formData.append('file', input.files[0]);
+                const isRed = Math.random() < 0.7;
+                const color = isRed ? 'red' : 'green';
+                const label = isRed ? '!' : 'O';
+
+                target.className = `game-target ${color}`;
+                target.textContent = label;
+                target.style.display = 'flex';
                 
-                try {
-                    const response = await fetch(SERVER_URL + '/predict/image', {
-                        method: 'POST',
-                        body: formData
-                    });
+                const padding = 100;
+                const maxX = area.offsetWidth - 100;
+                const maxY = area.offsetHeight - 100;
+                target.style.left = (padding + Math.random() * (maxX - 2 * padding)) + 'px';
+                target.style.top = (padding + Math.random() * (maxY - 2 * padding)) + 'px';
+
+                gameData.currentStimulus = { isRed, time: Date.now(), responded: false };
+                gameData.stimulusSequence.push({ isRed, time: Date.now(), missed: true });
+
+                const timeout = 3000 + Math.random() * 2000;
+                gameData.stimulusTimeout = setTimeout(() => {
+                    if (gameData.currentStimulus && !gameData.currentStimulus.responded) {
+                        if (gameData.currentStimulus.isRed) {
+                            gameData.wrong++;
+                            gameData.reactions++;
+                        }
+                        target.style.display = 'none';
+                        gameData.currentStimulus = null;
+                        updateScoreboard();
+                    }
+                }, 3000);
+            }
+
+            function handleKeyPress(e) {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    if (!gameData.running || !gameData.currentStimulus || gameData.currentStimulus.responded) return;
+
+                    gameData.currentStimulus.responded = true;
+                    clearTimeout(gameData.stimulusTimeout);
                     
-                    const data = await response.json();
-                    const isFatigue = data.prediction === 'Fatigue';
-                    const rec = RECOMMENDATIONS[isFatigue ? 'High' : 'Low'];
+                    const reactionTime = Date.now() - gameData.currentStimulus.time;
                     
-                    result.className = `result ${rec.color}`;
-                    result.style.display = 'block';
-                    result.innerHTML = `
-                        <h3>${rec.icon} ${data.prediction === 'Fatigue' ? 'Признаки усталости обнаружены' : 'Усталость не обнаружена'}</h3>
-                        <p><span class="fatigue-badge ${isFatigue ? 'fatigue-high' : 'fatigue-low'}">${data.prediction === 'Fatigue' ? 'Усталость' : 'Бодрость'}</span></p>
-                        <p class="confidence">Уверенность: ${(data.confidence * 100).toFixed(1)}%</p>
-                        <div class="recommendation">
-                            <h4>${rec.icon} ${rec.title}</h4>
-                            <p>${rec.description}</p>
-                            <div class="rest-time">
-                                <div class="label">Рекомендуемый отдых:</div>
-                                <div class="time">${rec.restTime}</div>
-                            </div>
-                            <h4 style="margin-top: 15px;">Рекомендации:</h4>
-                            ${rec.actions.map(a => `<p style="margin: 5px 0;">${a}</p>`).join('')}
-                        </div>
-                    `;
-                } catch (e) {
-                    result.className = 'result error';
-                    result.style.display = 'block';
-                    result.innerHTML = `<h3>&#x274C; Ошибка</h3><p>Не удалось проанализировать изображение: ${e.message}</p>`;
-                } finally {
-                    spinner.style.display = 'none';
+                    if (gameData.currentStimulus.isRed) {
+                        gameData.correct++;
+                        gameData.reactionTimes.push(reactionTime);
+                    } else {
+                        gameData.wrong++;
+                    }
+                    
+                    gameData.reactions++;
+                    
+                    const last = gameData.stimulusSequence[gameData.stimulusSequence.length - 1];
+                    if (last) last.missed = false;
+                    
+                    document.getElementById('game-target').style.display = 'none';
+                    gameData.currentStimulus = null;
+                    updateScoreboard();
                 }
             }
-            
-            function submitTabular() {
+
+            function updateScoreboard() {
+                document.getElementById('game-reactions').textContent = gameData.reactions;
+                document.getElementById('game-correct').textContent = gameData.correct;
+                document.getElementById('game-wrong').textContent = gameData.wrong;
+                
+                if (gameData.reactionTimes.length > 0) {
+                    const avg = gameData.reactionTimes.reduce((a, b) => a + b, 0) / gameData.reactionTimes.length;
+                    document.getElementById('game-avg-ms').textContent = Math.round(avg);
+                }
+            }
+
+            function updateTimer() {
+                const pct = (gameData.timeLeft / 30) * 100;
+                document.getElementById('game-timer-fill').style.width = pct + '%';
+                document.getElementById('game-time').textContent = Math.ceil(gameData.timeLeft);
+            }
+
+            function endGame() {
+                gameData.running = false;
+                document.removeEventListener('keydown', handleKeyPress);
+                document.getElementById('game-target').style.display = 'none';
+                document.getElementById('game-message').textContent = '⏰ Тест завершён!';
+                document.getElementById('game-message').style.display = 'block';
+                
+                const totalTrials = gameData.stimulusSequence.length;
+                const missedCount = gameData.stimulusSequence.filter(s => s.missed && s.isRed).length;
+                
+                const decisions_made = gameData.reactions;
+                const error_rate = gameData.reactions > 0 ? (gameData.wrong / gameData.reactions) : 0;
+                const task_switches = Math.floor(gameData.stimulusSequence.length / 3);
+                const avg_time = gameData.reactionTimes.length > 0
+                    ? (gameData.reactionTimes.reduce((a, b) => a + b, 0) / gameData.reactionTimes.length) / 1000
+                    : 5.0;
+                
+                gameData.measured = {
+                    decisions_made: Math.max(decisions_made, 10),
+                    task_switches: Math.max(task_switches, 3),
+                    avg_decision_time_sec: Math.max(avg_time, 0.5),
+                    error_rate: Math.min(error_rate, 0.5),
+                    cognitive_load_score: Math.min(error_rate * 1.5 + (1 - gameData.correct / Math.max(gameData.reactions, 1)) * 0.5 + 0.2, 1.0)
+                };
+
+                const btn = document.getElementById('game-start-btn');
+                btn.disabled = false;
+                btn.textContent = '🔄 Пройти заново';
+
+                document.getElementById('game-next-btn').style.display = 'block';
+                document.getElementById('step1').className = 'step step-done';
+                document.getElementById('step2').className = 'step step-active';
+
+                document.getElementById('game-message').innerHTML = `
+                    &#x2705; Тест пройден!<br>
+                    <span style="font-size: 0.8em;">
+                        Реакций: ${gameData.reactions} | 
+                        Верных: ${gameData.correct} | 
+                        Ошибок: ${gameData.wrong} | 
+                    </span>
+                `;
+            }
+
+            function goToManual() {
+                document.getElementById('game-section').style.display = 'none';
+                document.getElementById('manual-section').classList.add('active');
+            }
+
+            function submitCombined() {
+                const measured = gameData.measured || {
+                    decisions_made: 20,
+                    task_switches: 5,
+                    avg_decision_time_sec: 2.5,
+                    error_rate: 0.05,
+                    cognitive_load_score: 0.3
+                };
+
                 const data = {
-                    Hours_Awake: parseFloat(document.getElementById('hours_awake').value) || 0,
-                    Decisions_Made: parseFloat(document.getElementById('decisions_made').value) || 0,
-                    Task_Switches: parseFloat(document.getElementById('task_switches').value) || 0,
-                    Avg_Decision_Time_sec: parseFloat(document.getElementById('avg_decision_time').value) || 0,
-                    Sleep_Hours_Last_Night: parseFloat(document.getElementById('sleep_hours').value) || 0,
+                    Hours_Awake: parseFloat(document.getElementById('hours_awake').value) || 8,
+                    Decisions_Made: Math.round(measured.decisions_made),
+                    Task_Switches: Math.round(measured.task_switches),
+                    Avg_Decision_Time_sec: parseFloat(measured.avg_decision_time_sec.toFixed(2)),
+                    Sleep_Hours_Last_Night: parseFloat(document.getElementById('sleep_hours').value) || 7,
                     Caffeine_Intake_Cups: parseFloat(document.getElementById('caffeine_cups').value) || 0,
                     Stress_Level_1_10: parseFloat(document.getElementById('stress_level').value) || 5,
-                    Error_Rate: parseFloat(document.getElementById('error_rate').value) || 0,
-                    Cognitive_Load_Score: parseFloat(document.getElementById('cognitive_load').value) || 0
+                    Error_Rate: parseFloat(measured.error_rate.toFixed(4)),
+                    Cognitive_Load_Score: parseFloat(measured.cognitive_load_score.toFixed(4))
                 };
-                
+
+                document.getElementById('step2').className = 'step step-done';
+
                 analyzeTabularData(data);
             }
-            
+
             async function analyzeTabularData(data) {
                 const spinner = document.getElementById('tabular-spinner');
                 const result = document.getElementById('tabular-result');
@@ -457,9 +598,9 @@ async def home():
                     
                     const resultData = await response.json();
                     
-                    if (!response.ok) {
-                        throw new Error(resultData.detail || 'Ошибка сервера');
-                    }
+                    if (!response.ok) throw new Error(resultData.detail || 'Ошибка сервера');
+                    
+                    document.getElementById('step3').className = 'step step-done';
                     
                     const prediction = resultData.prediction;
                     const rec = RECOMMENDATIONS[prediction];
@@ -471,49 +612,112 @@ async def home():
                     const probs = resultData.probabilities || {};
                     ['High', 'Moderate', 'Low'].forEach(level => {
                         const val = (probs[level] || 0) * 100;
-                        const colorClass = level === 'High' ? 'prob-high' : level === 'Moderate' ? 'prob-moderate' : 'prob-low';
+                        const cc = level === 'High' ? 'prob-high' : level === 'Moderate' ? 'prob-moderate' : 'prob-low';
                         probHtml += `
                             <div style="margin: 8px 0;">
                                 <span>${level === 'High' ? 'Высокая' : level === 'Moderate' ? 'Умеренная' : 'Низкая'}: ${val.toFixed(1)}%</span>
-                                <div class="prob-bar"><div class="prob-fill ${colorClass}" style="width: ${val}%;"></div></div>
+                                <div class="prob-bar"><div class="prob-fill ${cc}" style="width: ${val}%;"></div></div>
                             </div>
                         `;
                     });
-                    
+
                     result.innerHTML = `
                         <h3>${rec.icon} ${rec.title}</h3>
-                        <p><span class="fatigue-badge fatigue-${prediction.toLowerCase()}">${prediction === 'High' ? 'ВЫСОКАЯ' : prediction === 'Moderate' ? 'УМЕРЕННАЯ' : 'НИЗКАЯ'} УСТАЛОСТЬ</span></p>
+                        <p><span class="fatigue-badge fatigue-${prediction.toLowerCase()}">${prediction === 'High' ? 'ВЫСОКАЯ' : prediction === 'Moderate' ? 'УМЕРЕННАЯ' : 'НИЗКАЯ'}</span></p>
                         <p class="confidence">Уверенность: ${((resultData.confidence || 0) * 100).toFixed(1)}%</p>
-                        
-                        <h3 style="margin-top: 20px;">Распределение вероятностей:</h3>
+
+                        <h3 style="margin-top: 20px;">&#x1F3AE; Результаты теста:</h3>
+                        <div class="grid-2" style="margin: 15px 0;">
+                            <div><strong>Реакций:</strong> ${gameData.reactions}</div>
+                            <div><strong>Верных:</strong> ${gameData.correct}</div>
+                            <div><strong>Ошибок:</strong> ${gameData.wrong}</div>
+                            <div><strong>Среднее время:</strong> ${gameData.reactionTimes.length > 0 ? Math.round(gameData.reactionTimes.reduce((a,b) => a+b, 0) / gameData.reactionTimes.length) + ' мс' : '---'}</div>
+                        </div>
+
+                        <h3>Распределение вероятностей усталости:</h3>
                         ${probHtml}
                         
                         <div class="rest-time">
-                            <div class="label">Рекомендуемое время отдыха:</div>
+                            <div class="label">&#x23F0; Рекомендуемое время отдыха:</div>
                             <div class="time">${rec.restTime}</div>
                         </div>
                         
                         <div class="recommendation">
                             <h4>${rec.icon} ${rec.description}</h4>
-                            <h4 style="margin-top: 15px;">&#x1F4CB; Рекомендации для пилота:</h4>
+                            <h4 style="margin-top: 15px;">&#x1F4CB; Рекомендации:</h4>
                             ${rec.actions.map(a => `<p style="margin: 8px 0;">${a}</p>`).join('')}
                         </div>
                         
                         <div class="info-box" style="margin-top: 20px;">
-                            <p><strong>&#x2139;&#xFE0F; Примечание:</strong> Данная система является вспомогательным инструментом. 
-                            Окончательное решение о допуске к полёту принимается в соответствии с медицинскими нормами и SOP авиакомпании.</p>
+                            <p><strong>&#x2139;&#xFE0F;</strong> Окончательное решение о допуске принимается по медицинским нормам и SOP авиакомпании.</p>
                         </div>
                     `;
                 } catch (e) {
                     result.className = 'result error';
-                    result.innerHTML = `<h3>&#x274C; Ошибка</h3><p>Не удалось проанализировать данные: ${e.message}</p>`;
+                    result.innerHTML = `<h3>&#x274C; Ошибка</h3><p>${e.message}</p>`;
                     result.style.display = 'block';
                 } finally {
                     spinner.style.display = 'none';
                 }
             }
-            
-            updateStats();
+
+            async function checkConnection() {
+                try {
+                    const response = await fetch(SERVER_URL + '/health');
+                    if (response.ok) {
+                        document.getElementById('status-indicator').className = 'status-indicator status-connected';
+                        document.getElementById('status-text').textContent = 'Подключено к серверу';
+                    } else throw new Error('err');
+                } catch (e) {
+                    document.getElementById('status-indicator').className = 'status-indicator status-disconnected';
+                    document.getElementById('status-text').textContent = 'Отключено - сервер недоступен';
+                }
+            }
+
+            function previewImage(input) {
+                const container = document.getElementById('image-preview-container');
+                const preview = document.getElementById('image-preview');
+                if (input.files && input.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) { preview.src = e.target.result; container.style.display = 'block'; };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            async function uploadImage() {
+                const input = document.getElementById('image-input');
+                const spinner = document.getElementById('image-spinner');
+                const result = document.getElementById('image-result');
+                if (!input.files[0]) { alert('Выберите изображение'); return; }
+                
+                spinner.style.display = 'block'; result.style.display = 'none';
+                const formData = new FormData();
+                formData.append('file', input.files[0]);
+                
+                try {
+                    const response = await fetch(SERVER_URL + '/predict/image', { method: 'POST', body: formData });
+                    const data = await response.json();
+                    const isFatigue = data.prediction === 'Fatigue';
+                    const rec = RECOMMENDATIONS[isFatigue ? 'High' : 'Low'];
+                    
+                    result.className = `result ${rec.color}`; result.style.display = 'block';
+                    result.innerHTML = `
+                        <h3>${rec.icon} ${data.prediction === 'Fatigue' ? 'Признаки усталости' : 'Усталость не обнаружена'}</h3>
+                        <p><span class="fatigue-badge ${isFatigue ? 'fatigue-high' : 'fatigue-low'}">${data.prediction === 'Fatigue' ? 'Усталость' : 'Бодрость'}</span></p>
+                        <p class="confidence">Уверенность: ${(data.confidence * 100).toFixed(1)}%</p>
+                        <div class="recommendation">
+                            <h4>${rec.icon} ${rec.title}</h4>
+                            <p>${rec.description}</p>
+                            <div class="rest-time"><div class="label">Отдых:</div><div class="time">${rec.restTime}</div></div>
+                            ${rec.actions.map(a => `<p style="margin: 5px 0;">${a}</p>`).join('')}
+                        </div>
+                    `;
+                } catch (e) {
+                    result.className = 'result error'; result.style.display = 'block';
+                    result.innerHTML = `<h3>&#x274C; Ошибка</h3><p>${e.message}</p>`;
+                } finally { spinner.style.display = 'none'; }
+            }
+
             checkConnection();
             setInterval(checkConnection, 30000);
         </script>
